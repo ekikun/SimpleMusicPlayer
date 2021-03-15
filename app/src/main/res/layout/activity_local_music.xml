@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/title_bar2"
+        layout="@layout/titlebar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swiperlayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="11">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3" />
+
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/paly_bar"
+        android:paddingTop="1dp"
+        android:background="@color/bottom"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/shapeableImageView"
+                android:layout_width="@dimen/dp_50"
+                android:layout_height="50dp"
+                android:layout_marginStart="5dp"
+                android:background="@drawable/musics"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearance="@style/circleImageStyle" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.15"/>
+
+            <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.65"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.75"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.85"/>
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/song_name_view"
+                android:layout_width="204dp"
+                android:layout_height="59dp"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:paddingLeft="@dimen/dp_12"
+                android:paddingRight="@dimen/dp_12"
+                android:singleLine="true"
+                android:text="Good Music"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                app:layout_constraintHorizontal_bias="0.461"
+                app:layout_constraintStart_toStartOf="@+id/guideline1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.4" />
+
+            <RelativeLayout
+                android:id="@+id/play_btn_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:clickable="true"
+                android:onClick="onClick"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline4"
+                app:layout_constraintStart_toStartOf="@+id/guideline3"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/play_btn"
+                    android:layout_width="@dimen/dp_24"
+                    android:layout_height="@dimen/dp_24"
+                    android:clickable="false"
+                    android:gravity="center"
+                    android:insetLeft="0dp"
+                    android:insetTop="@dimen/dp_0"
+                    android:insetRight="0dp"
+                    android:insetBottom="0dp"
+                    app:backgroundTint="@color/white"
+                    app:cornerRadius="@dimen/dp_60"
+                    app:icon="@drawable/tomare"
+                    app:iconSize="@dimen/dp_24"
+                    app:iconTint="@color/black"
+                    app:strokeColor="@color/white"
+                    app:strokeWidth="2dp" />
+
+                <com.example.simplemusicplayer.MusicRoundProgressView
+                    android:id="@+id/paly_progress"
+                    android:layout_width="@dimen/dp_24"
+                    android:layout_height="@dimen/dp_24"
+                    android:clickable="false"
+                    app:backgroundTint="@color/white"
+                    app:cornerRadius="@dimen/dp_60"
+                    app:icon="@drawable/tomare"
+                    app:iconSize="@dimen/dp_24"
+                    app:iconTint="@color/black"
+                    app:radius="@dimen/dp_10"
+                    app:strokeColor="@color/black"
+                    app:strokeWidth="2dp"
+                    tools:layout_editor_absoluteX="337dp"
+                    tools:layout_editor_absoluteY="19dp" />
+
+            </RelativeLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/upsong"
+                android:onClick="onClick"
+                android:layout_width="@dimen/dp_24"
+                android:layout_height="24dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                app:layout_constraintStart_toStartOf="@+id/guideline2"
+                app:layout_constraintTop_toTopOf="parent"
+                android:gravity="center"
+                android:insetLeft="0dp"
+                android:insetTop="@dimen/dp_0"
+                android:insetRight="0dp"
+                android:insetBottom="0dp"
+                app:backgroundTint="@color/white"
+                app:cornerRadius="@dimen/dp_60"
+                app:icon="@drawable/shangyiqu"
+                app:iconSize="@dimen/dp_24"
+                app:iconTint="@color/black"
+                app:strokeColor="@color/white"
+                app:strokeWidth="2dp"
+                android:clickable="true"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/downsong"
+                android:onClick="onClick"
+                android:layout_width="@dimen/dp_24"
+                android:layout_height="24dp"
+                android:clickable="true"
+                android:gravity="center"
+                android:insetLeft="0dp"
+                android:insetTop="@dimen/dp_0"
+                android:insetRight="0dp"
+                android:insetBottom="0dp"
+                app:backgroundTint="@color/white"
+                app:cornerRadius="@dimen/dp_60"
+                app:icon="@drawable/xiayiqu"
+                app:iconSize="@dimen/dp_24"
+                app:iconTint="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.216"
+                app:layout_constraintStart_toStartOf="@+id/guideline4"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.483"
+                app:strokeColor="@color/white"
+                app:strokeWidth="2dp" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="PlayerBackground">
+        <item name="background">@drawable/kakuya</item>
+    </style>
+    <style name="circleImageStyle">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">80%</item>
+    </style>
+    <declare-styleable name="RoundProgressView">
+        <attr name="radius" format="dimension"/>
+        <attr name="strokeWidth" format="dimension"/>
+        <attr name="strokeColor" format="color"/>
+    </declare-styleable>
+</resources>
